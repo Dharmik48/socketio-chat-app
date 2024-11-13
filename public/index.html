@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chat App</title>
+		<script src="/socket.io/socket.io.min.js"></script>
+		<script src="./script.js" defer></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="p-4">
+		<div class="flex gap-4 items-center">
+			<h1>Welcome to chat app!</h1>
+			<button
+				class="bg-green-500 text-white rounded-md px-2 hidden"
+				id="connect-btn"
+			>
+				Connect
+			</button>
+		</div>
+		<div class="flex gap-4 items-center">
+			<p>My id is <span id="socket-id">null</span></p>
+			<button class="bg-red-500 text-white rounded-md px-2" id="disconnect-btn">
+				Disconnect
+			</button>
+		</div>
+		<div class="border-2 p-2 rounded-md mt-8 space-y-2">
+			<ul id="message-box" class="space-y-2"></ul>
+			<form class="flex gap-2" id="form">
+				<input
+					type="text"
+					id="msg"
+					class="rounded-md border-2 px-2 py-1 flex-1"
+				/>
+				<button type="submit" class="bg-blue-500 text-white rounded-md px-2">
+					Send
+				</button>
+			</form>
+		</div>
+	</body>
+</html>
